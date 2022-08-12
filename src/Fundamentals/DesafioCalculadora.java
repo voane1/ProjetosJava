@@ -16,7 +16,6 @@ public class DesafioCalculadora {
 
 
         if (t.matches("[0-9]*") && q.matches("[0-9]*") ){
-
             double resultadoInt = calculadora(t,q,s);
             System.out.printf("O resultado de "+t+" "+s+" "+q+" = %.0f", resultadoInt);
         } else{
@@ -27,7 +26,7 @@ public class DesafioCalculadora {
     private static double calculadora(String num1, String num2, String s) {
         double t = Double.parseDouble(num1);
         double q = Double.parseDouble(num2);
-        double result = "+".equals(s) ? t + q : 0;
+        double result = "+".equals(s) ? t + q : 0.0;
         result = "-".equals(s) ? t - q : result;
         result = "*".equals(s) ? t * q : result;
         result = "/".equals(s) ? t / q : result;
