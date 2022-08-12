@@ -16,50 +16,24 @@ public class DesafioCalculadora {
 
 
         if (t.matches("[0-9]*") && q.matches("[0-9]*") ){
-           int resultadoInt = calculadoraInt(t,q,s);
-            System.out.println("O resultado é: "+ resultadoInt);
+
+            double resultadoInt = calculadora(t,q,s);
+            System.out.printf("O resultado de "+t+" "+s+" "+q+" = %.0f", resultadoInt);
         } else{
-            double resultadoDouble = calculadoraDouble(t,q,s);
-            System.out.println("O resultado é: "+ resultadoDouble);
+            double resultadoDouble = calculadora(t,q,s);
+            System.out.println("O resultado de "+t+" "+s+" "+q+" = "+resultadoDouble);
         }
     }
-    private static double calculadoraDouble(String t, String q, String s) {
-        double result = 0.0;
-        if (s.equals("+")){
-            result = Double.parseDouble(t) + Double.parseDouble(q);
-        } else if (s.equals("-")) {
-            result = Double.parseDouble(t) - Double.parseDouble(q);
-        } else if (s.equals("/")) {
-            result = Double.parseDouble(t) / Double.parseDouble(q);
-        } else if (s.equals("*")) {
-            result = Double.parseDouble(t) * Double.parseDouble(q);
-        } else if (s.equals("%")) {
-            result = Double.parseDouble(t) % Double.parseDouble(q);
-        }else {
-            System.out.println("Informe umas dessas operações -> (+ - / * %)");
-        }
-
+    private static double calculadora(String num1, String num2, String s) {
+        double t = Double.parseDouble(num1);
+        double q = Double.parseDouble(num2);
+        double result = "+".equals(s) ? t + q : 0;
+        result = "-".equals(s) ? t - q : result;
+        result = "*".equals(s) ? t * q : result;
+        result = "/".equals(s) ? t / q : result;
+        result = "%".equals(s) ? t % q : result;
         return result;
     }
-    private static int calculadoraInt(String t, String q, String s) {
-        int result = 0;
-        if (s.equals("+")){
-            result = Integer.parseInt(t) + Integer.parseInt(q);
-        } else if (s.equals("-")) {
-            result = Integer.parseInt(t) - Integer.parseInt(q);
-        } else if (s.equals("/")) {
-            result = Integer.parseInt(t) / Integer.parseInt(q);
-        } else if (s.equals("*")) {
-            result = Integer.parseInt(t) * Integer.parseInt(q);
-        } else if (s.equals("%")) {
-            result = Integer.parseInt(t) % Integer.parseInt(q);
-        }else {
-            System.out.println("Informe umas dessas operações -> (+ - / * %)");
-        }
-
-        return result;
-    }
-
 
 
 
