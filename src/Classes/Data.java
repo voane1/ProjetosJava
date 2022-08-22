@@ -8,9 +8,10 @@ public class Data {
  * Construtor default
  * */
     public Data() {
-        this.dia = 1;
-        this.mes = 1;
-        this.ano = 1970;
+       // this.dia = 1;
+       // this.mes = 1;
+        //this.ano = 1970;
+        this(1,1,1970);//só pode usar dentro de um construtor(usando o this chama um construtor apartir de outro)
 
     }
 
@@ -27,15 +28,15 @@ public class Data {
     }
 
     public int getDia() {
-        return dia;
+        return this.dia;
     }
 
     public int getMes() {
-        return mes;
+        return this.mes;
     }
 
     public int getAno() {
-        return ano;
+        return this.ano;
     }
 
     public void setDia(int dia) {
